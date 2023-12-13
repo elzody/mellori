@@ -3,20 +3,15 @@ import ServerListIcon from './ServerListIcon.vue';
 </script>
 
 <template>
-  <div id="serverListSidebar">
-    <ServerListIcon />
-    <ServerListIcon />
-    <ServerListIcon />
-    <ServerListIcon />
-    <ServerListIcon />
-    <ServerListIcon />
+  <div>
+    <ServerListIcon v-for="num in 3" />
   </div>
 </template>
 
 <style scoped>
-#serverListSidebar {
-  background-color: #212529;
-  display: flex;
-  flex-flow: column nowrap;
-}
+  div {
+    background-color: #212529;
+    display: flex;
+    flex-flow: column nowrap;
+  }
 </style>

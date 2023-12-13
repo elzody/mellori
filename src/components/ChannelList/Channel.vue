@@ -1,22 +1,25 @@
 <script setup lang="ts">
-import { PhHash } from '@phosphor-icons/vue';
+import { ChannelType } from '../../types.ts'
+import { PhHash, PhSpeakerSimpleHigh } from '@phosphor-icons/vue'
 
-interface TextChannelProps {
+interface ChannelProps {
   name: string,
+  type: ChannelType,
 }
 
-const props = defineProps<TextChannelProps>();
+const props = defineProps<ChannelProps>();
 </script>
 
 <template>
-  <div id="channelListItem">
-    <PhHash :size="22" weight="regular" />
+  <div class="channel">
+    <PhHash v-if="props.type == ChannelType.Text" :size="22" weight="regular" />
+    <PhSpeakerSimpleHigh v-else :size="22" weight="fill" />
     <div>{{ props.name }}</div>
   </div>
 </template>
 
 <style scoped>
-  #channelListItem {
+  .channel {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -26,13 +29,13 @@ const props = defineProps<TextChannelProps>();
     color: #ADB5BD;
   }
 
-  #channelListItem:hover {
+  .channel:hover {
     background-color: #495057;
     color: #F8F9FA;
     cursor: pointer;
   }
 
-  #channelListItem svg {
+  .channel svg {
     margin: 5px;
   }
 </style>
