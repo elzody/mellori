@@ -18,24 +18,22 @@ const props = defineProps<ChannelProps>();
   </div>
 </template>
 
-<style scoped>
+<style>
   .channel {
     display: flex;
-    flex-flow: row nowrap;
     align-items: center;
-    text-overflow: ellipsis;
     margin: 2px 5px;
+    padding: 2px;
     border-radius: 0.25rem;
-    color: #ADB5BD;
+
+    & svg {
+      margin: 5px;
+    }
   }
 
   .channel:hover {
-    background-color: #495057;
-    color: #F8F9FA;
+    background-color: var(--bg-3);
+    color: var(--fg-3);
     cursor: pointer;
-  }
-
-  .channel svg {
-    margin: 5px;
   }
 </style>

@@ -4,7 +4,7 @@ import { ChannelType } from '../../types.ts'
 </script>
 
 <template>
-  <div>
+  <div id="channel-list">
     <Channel
       v-for="num in 5"
       :name="'text-channel-' + num.toString()"
@@ -19,12 +19,13 @@ import { ChannelType } from '../../types.ts'
   </div>
 </template>
 
-<style scoped>
-  div {
-    background-color: #343A40;
+<style>
+  #channel-list {
+    background-color: var(--bg-1);
     display: flex;
     flex-flow: column nowrap;
-    width: 200px;
+    width: 225px;
     font-size: 15px;
+    color: var(--fg-2);
   }
 </style>

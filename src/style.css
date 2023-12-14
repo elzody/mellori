@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('theme.css');
 
 html, body {
     margin: 0;
@@ -8,6 +9,6 @@ html, body {
 
 #app {
     display: grid;
-    grid-template-columns: repeat(4, max-content);
+    grid-template-columns: repeat(2, max-content) 1fr max-content;
     height: 100%;
 }

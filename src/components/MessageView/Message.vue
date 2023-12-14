@@ -1,45 +1,40 @@
 <script setup lang="ts">
+interface MessageProps {
+  msg: string,
+}
 
+const props = defineProps<MessageProps>();
 </script>
 
 <template>
   <div class="message">
     <img src="/vite.svg" alt="User icon" />
     <div>
-      <span>User name</span>
-      <p>
-        I am the master of the C.L.I.T. Remember this fucking face.
-      </p>
+      <div>Username</div>
+      <div>{{ props.msg }}</div>
     </div>
   </div>
 </template>
 
-<style scoped>
+<style>
   .message {
     display: flex;
-    color: #F8F9FA;
+    padding: 5px 10px;
+    margin: 5px 0;
+
+    & img {
+      align-self: flex-start;
+      width: 40px;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    & div {
+      padding: 0 6px;
+    }
   }
 
-  .message img {
-    align-self: flex-start;
-    flex-basis: 48px;
-    flex-shrink: 0;
-    border-radius: 50%;
-  }
-
-  .message div {
-    display: flex;
-    flex-flow: column nowrap;
-  }
-
-  .message div > * {
-    margin: 0;
-    padding: 0;
-  }
-
-  .message div span {
-  }
-
-  .message div p {
+  .message:hover {
+    background-color: var(--bg-3);
   }
 </style>
