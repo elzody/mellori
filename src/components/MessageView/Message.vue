@@ -19,12 +19,12 @@ const props = defineProps<MessageProps>();
 <style>
   .message {
     display: flex;
-    padding: 5px 10px;
-    margin: 5px 0;
+    padding: 5px;
 
     & img {
       align-self: flex-start;
-      width: 40px;
+      flex: 0 0 40px;
+      margin-top: 5px; /* TODO: Find better way to align image with message author */
       border-radius: 50%;
       background-color: white;
     }

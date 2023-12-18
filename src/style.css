@@ -9,6 +9,7 @@ html, body {
 
 #app {
     display: grid;
+    overflow-y: auto;
     grid-template-columns: repeat(2, max-content) 1fr max-content;
     height: 100%;
 }
